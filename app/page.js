@@ -49,12 +49,30 @@ const features = [
 ]
 
 const appScreens = [
-  "Home dashboard",
-  "All coupons",
-  "Redeem flow",
-  "Linked apps",
-  "Cashback overview",
-  "Saved coupons",
+  {
+    label: "App",
+    src: "/Splash%20Screen%202.png",
+  },
+  {
+    label: "Apps authentication",
+    src: "/Apps%20Authetication%202.png",
+  },
+  {
+    label: "Coupons listing",
+    src: "/Coupons%20listing%201.png",
+  },
+  {
+    label: "More coupons",
+    src: "/Coupons%20listing%205.png",
+  },
+  {
+    label: "De-sync apps",
+    src: "/De-Sync%20Apps.png",
+  },
+  {
+    label: "Offer detail",
+    src: "/Detail%20page%201.png",
+  },
 ]
 
 export default function HomePage() {
@@ -356,24 +374,23 @@ export default function HomePage() {
           </div>
           <div className="mt-6 overflow-x-auto pb-2">
             <div className="flex min-w-max gap-4">
-              {appScreens.map((label) => (
+              {appScreens.map((screen) => (
                 <div
-                  key={label}
-                  className="flex h-64 w-40 flex-col justify-between rounded-3xl border border-slate-200 bg-gradient-to-b from-white via-slate-50 to-slate-100 p-3 text-[11px] text-slate-700 shadow-soft-glow"
+                  key={screen.label}
+                  className="flex h-72 w-44 flex-col items-center rounded-3xl border border-slate-200 bg-white p-3 text-[11px] text-slate-700 shadow-soft-glow"
                 >
-                  <div>
-                    <div className="h-1.5 w-10 rounded-full bg-slate-200" />
-                    <p className="mt-4 text-xs font-medium text-slate-900">{label}</p>
-                    <p className="mt-2 text-[10px] text-slate-500">
-                      Placeholder for app screen preview. Replace with final product
-                      screenshots.
-                    </p>
+                  <div className="relative flex h-full w-full items-center justify-center">
+                    <div className="h-full w-full overflow-hidden rounded-[1.6rem] border border-slate-200 bg-slate-100">
+                      <Image
+                        src={screen.src}
+                        alt={screen.label}
+                        width={240}
+                        height={480}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
                   </div>
-                  <div className="space-y-1 text-[10px] text-slate-500">
-                    <div className="h-1 w-12 rounded-full bg-slate-200" />
-                    <div className="h-1 w-16 rounded-full bg-slate-300" />
-                    <div className="h-1 w-10 rounded-full bg-slate-300" />
-                  </div>
+                  {/* <p className="mt-3 text-xs font-medium text-slate-900">{screen.label}</p> */}
                 </div>
               ))}
             </div>
