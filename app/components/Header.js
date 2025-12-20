@@ -9,9 +9,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <nav className="flex w-full items-center justify-between px-4 py-3 sm:px-6 lg:px-12">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 -ml-2 sm:-ml-4">
           <Image
             src="/dealora-logo.png"
             alt="Dealora logo"

@@ -49,7 +49,7 @@ const featureBlocks = [
 export default function FeaturesPage() {
   return (
     <div className="bg-slate-50 text-slate-900">
-      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-12 sm:py-16">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
           Features
         </p>
@@ -63,7 +63,7 @@ export default function FeaturesPage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-5xl px-4 pb-16 sm:px-6 sm:pb-20">
+      <section className="w-full px-4 pb-16 sm:px-6 lg:px-12 sm:pb-20">
         <div className="grid gap-5 md:grid-cols-2">
           {featureBlocks.map((feature) => (
             <div

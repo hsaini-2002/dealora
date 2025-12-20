@@ -40,7 +40,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-slate-50 text-slate-900">
-      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-12 sm:py-16">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
           Contact
         </p>
@@ -53,7 +53,7 @@ export default function ContactPage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 pb-16 sm:px-6 sm:pb-20">
+      <section className="w-full px-4 pb-16 sm:px-6 lg:px-12 sm:pb-20">
         <div className="grid gap-8 md:grid-cols-[minmax(0,_1.2fr)_minmax(0,_0.9fr)]">
           <form
             onSubmit={handleSubmit}

@@ -1,3 +1,8 @@
+"use client"
+
+import { useState } from 'react'
+import { FiChevronDown } from 'react-icons/fi'
+
 const faqs = [
   {
     question: "Why is my coupon not working?",
@@ -42,9 +47,11 @@ const faqs = [
 ]
 
 export default function FAQPage() {
+  const [openIndex, setOpenIndex] = useState(null)
+
   return (
     <div className="bg-slate-50 text-slate-900">
-      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-12 sm:py-16">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
           FAQ
         </p>
@@ -57,18 +64,38 @@ export default function FAQPage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 pb-16 sm:px-6 sm:pb-20">
+      <section className="w-full px-4 pb-16 sm:px-6 lg:px-12 sm:pb-20">
         <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-sm">
-          {faqs.map((item) => (
-            <div key={item.question} className="px-5 py-4 sm:px-6 sm:py-5">
-              <h2 className="text-sm font-semibold text-slate-900">
-                {item.question}
-              </h2>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                {item.answer}
-              </p>
-            </div>
-          ))}
+          {faqs.map((item, idx) => {
+            const isOpen = openIndex === idx
+            return (
+              <div key={item.question} className="px-5 py-4 sm:px-6 sm:py-5">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  aria-expanded={isOpen}
+                  className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4"
+                >
+                  <span className="w-8 text-left text-sm font-semibold tabular-nums text-slate-400">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-center text-xl font-semibold text-slate-900">
+                    {item.question}
+                  </span>
+                  <FiChevronDown
+                    className={`ml-4 h-5 w-5 text-slate-500 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-brand-accent' : ''
+                    }`}
+                    aria-hidden
+                  />
+                </button>
+
+                <div className={`mt-2 text-lg leading-relaxed text-slate-600 ${isOpen ? 'block' : 'hidden'}`}>
+                  {item.answer}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
     </div>

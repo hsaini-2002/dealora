@@ -1,7 +1,7 @@
 export default function TermsPage() {
   return (
     <div className="bg-slate-50 text-slate-900">
-      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-12 sm:py-16">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
           Terms of Use
         </p>
@@ -15,7 +15,7 @@ export default function TermsPage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 pb-16 space-y-6 text-sm text-slate-600 sm:px-6 sm:pb-20">
+      <section className="w-full px-4 pb-16 space-y-6 text-sm text-slate-600 sm:px-6 lg:px-12 sm:pb-20">
         <div>
           <h2 className="text-base font-semibold text-slate-900">Use of the service</h2>
           <p className="mt-2 text-sm leading-relaxed">

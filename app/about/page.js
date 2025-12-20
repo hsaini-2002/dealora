@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function AboutPage() {
   return (
     <div className="bg-slate-50 text-slate-900">
-      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-12 sm:py-16">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
           About Dealora
         </p>
@@ -18,7 +18,7 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 pb-10 sm:px-6 sm:pb-14">
+      <section className="w-full px-4 pb-10 sm:px-6 lg:px-12 sm:pb-14">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-slate-900">Mission</h2>
@@ -40,7 +40,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 pb-10 sm:px-6 sm:pb-14">
+      <section className="w-full px-4 pb-10 sm:px-6 lg:px-12 sm:pb-14">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-slate-900">What makes Dealora different</h2>
@@ -62,7 +62,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 pb-16 sm:px-6 sm:pb-20">
+      <section className="w-full px-4 pb-16 sm:px-6 lg:px-12 sm:pb-20">
         <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-lg font-semibold text-slate-900">Vision</h2>
           <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
