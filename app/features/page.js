@@ -1,90 +1,317 @@
+'use client'
+
+import { motion } from "framer-motion"
+import { useState } from "react"
+
 const featureBlocks = [
   {
     title: "Coupon aggregation",
     description:
       "Pull live coupons and offers from supported apps into one central dashboard instead of juggling multiple sources.",
+    size: "wide",
+    accent: "violet",
   },
   {
     title: "Multi-app integration",
     description:
-      "Connect your favourite food, travel, shopping, and payments apps so Dealora can surface relevant rewards.",
+      "Connect food, travel, shopping, and payments apps so relevant rewards surface automatically.",
+    size: "wide",
+    accent: "blue",
   },
   {
     title: "Auto redirection logic",
     description:
-      "Tap on a deal and Dealora routes you to the right app or web destination for a seamless redemption flow.",
+      "Tap a deal and get routed to the correct app or web destination instantly.",
+    size: "normal",
+    accent: "indigo",
   },
   {
     title: "Coupon categorisation",
     description:
-      "See coupons organised by brand, category, and expiry so you can prioritise the ones that matter now.",
+      "Organised by brand, category, and expiry so important deals stay visible.",
+    size: "normal",
+    accent: "pink",
   },
   {
     title: "In-app dashboard",
     description:
-      "Glanceable cards that summarise active coupons, used offers, and total savings without digging through menus.",
+      "A single glance shows active coupons, used offers, and total savings.",
+    size: "tall",
+    accent: "violet",
   },
   {
     title: "Saved coupons",
     description:
-      "Bookmark high-value coupons, pin them to the top, and come back when you are ready to redeem.",
+      "Bookmark high-value deals and return when you are ready to redeem.",
+    size: "normal",
+    accent: "yellow",
   },
   {
     title: "Cashback tracking",
     description:
-      "Track pending, confirmed, and historical cashback across partners from inside Dealora.",
+      "Track pending, confirmed, and historical cashback across partners.",
+    size: "normal",
+    accent: "green",
   },
   {
     title: "Secure sign-in",
     description:
-      "Sign in with modern, secure authentication and clear controls over what data is used.",
+      "Modern authentication with clear controls over your data.",
+    size: "normal",
+    accent: "teal",
   },
   {
     title: "Real-time sync",
     description:
-      "See status and available rewards update as you redeem, earn cashback, or link new apps.",
+      "Rewards update instantly as you redeem, earn, or link new apps.",
+    size: "normal",
+    accent: "indigo",
   },
 ]
 
-export default function FeaturesPage() {
-  return (
-    <div className="bg-slate-50 text-slate-900">
-      <section className="w-full px-4 py-12 sm:px-6 lg:px-12 sm:py-16">
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
-          Features
-        </p>
-        <h1 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-          Everything you need to keep rewards under control.
-        </h1>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-          Dealora is built as a focused companion app that sits above your daily
-          spending stack. Each feature is designed to work quietly in the background
-          while staying one tap away when you need it.
-        </p>
-      </section>
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+}
 
-      <section className="w-full px-4 pb-16 sm:px-6 lg:px-12 sm:pb-20">
-        <div className="grid gap-5 md:grid-cols-2">
-          {featureBlocks.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-600 shadow-sm"
-            >
-              <div className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand-gradient text-xs font-semibold text-white">
-                UI
-              </div>
-              <div>
-                <h2 className="text-base font-semibold text-slate-900">
-                  {feature.title}
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed">{feature.description}</p>
-              </div>
-              <div className="mt-2 flex h-24 items-center justify-center rounded-xl border border-dashed border-slate-200 bg-slate-50 text-[11px] text-slate-500">
-                UI preview placeholder
-              </div>
-            </div>
-          ))}
+export default function FeaturesPage() {
+  const [activeIndex, setActiveIndex] = useState(null)
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <section className="w-full px-4 py-12 sm:px-6 lg:px-12">
+        <div className="w-full">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-brand-accent">
+            Features
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900">
+            Everything you need to keep rewards under control.
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-slate-600">
+            Dealora is built as a focused companion app that sits above your daily spending stack. Each feature is designed to work quietly in the background while staying one tap away when you need it.</p>
         </div>
+
+        {/* Feature Grid */}
+      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
+
+  {/* Row 1: Coupon Aggregation (wide) */}
+  {/* Row 1: Coupon Aggregation (wide) */}
+<motion.div
+  whileHover={{ y: -6 }}
+  className="md:col-span-2 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all relative overflow-hidden"
+>
+  <div className="flex flex-col gap-4">
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/coupons.png" 
+        alt="Coupon icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h3 className="text-2xl font-semibold text-slate-900">
+      Coupon aggregation
+    </h3>
+    <p className="text-slate-600">
+      Pull live coupons and offers from supported apps into one central dashboard instead of juggling multiple sources.
+    </p>
+    <span className="text-sm font-medium text-brand-accent mt-4">
+      How it works →
+    </span>
+  </div>
+  <div className="absolute -top-20 -right-20 w-64 h-64 bg-violet-200/30 blur-3xl rounded-full" />
+</motion.div>
+
+  {/* Row 1–2: In-App Dashboard (tall) */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="md:col-span-1 md:row-span-2 bg-white rounded-2xl p-8 shadow-xl relative overflow-hidden"
+  >
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/dashboard.png" 
+        alt="dashboard icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h3 className="text-2xl font-semibold mb-2">
+      In-app dashboard
+    </h3>
+    <p className=" text-sm">
+      Track coupons, usage, and savings in one focused view.
+    </p>
+
+    <div className="mt-8 space-y-3">
+      {[40, 65, 50, 85, 60].map((w, i) => (
+        <div key={i} className="h-2 bg-white/20 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-violet-400 transition-all duration-700"
+            style={{ width: `${w}%` }}
+          />
+        </div>
+      ))}
+    </div>
+
+    <div className="absolute top-0 right-0 w-72 h-72 bg-violet-500/30 blur-[100px]" />
+  </motion.div>
+
+  {/* Row 2: Cashback Tracking */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="flex justify-between mb-4">
+       <div className="w-16 h-16 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/package.png" 
+        alt="package icon" 
+        className="w-16 h-16" 
+      />
+    </div>
+      <span className="text-xs font-semibold bg-green-100 text-green-600 px-2 py-1 rounded-full">
+        Live
+      </span>
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Cashback tracking
+    </h4>
+    <p className="text-sm text-slate-600">
+      Track pending and confirmed cashback in real time.
+    </p>
+  </motion.div>
+
+  {/* Row 2: Smart Categorisation */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="w-10 h-10 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/options.png" 
+        alt="options icon" 
+        className="w-10 h-10" 
+      />
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Smart categorisation
+    </h4>
+    <p className="text-sm text-slate-600 mb-4">
+      Organised by brand, category, and expiry.
+    </p>
+    <div className="flex flex-wrap gap-2">
+      {["Shopping", "Travel", "Food"].map(tag => (
+        <span key={tag} className="text-xs px-3 py-1 bg-slate-100 rounded-full text-slate-600">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </motion.div>
+
+  {/* Row 2: Multi-App Integration */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="md:col-span-2 bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/integration.png" 
+        alt="integration icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Multi-app integration
+    </h4>
+    <p className="text-sm text-slate-600">
+      Connect shopping, travel, food, and payments apps so rewards surface automatically.
+    </p>
+  </motion.div>
+
+  {/* Row 2: Auto Redirection (right of multi-app) */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="md:col-span-1 bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/redirect.png" 
+        alt="redirection icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Auto redirection
+    </h4>
+    <p className="text-sm text-slate-600">
+      Jump directly to the correct app or website to redeem the deal.
+    </p>
+  </motion.div>
+
+  {/* Row 3: Saved Coupons */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/mobile-coupon.png" 
+        alt="saved coupon icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Saved coupons
+    </h4>
+    <p className="text-sm text-slate-600">
+      Bookmark deals and use them later.
+    </p>
+  </motion.div>
+
+  {/* Row 3: Secure Sign-in */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/log-in.png" 
+        alt="secure log in icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Secure sign-in
+    </h4>
+    <p className="text-sm text-slate-600">
+      Privacy-first authentication and data protection.
+    </p>
+  </motion.div>
+
+  {/* Row 3: Real-time Sync */}
+  <motion.div
+    whileHover={{ y: -6 }}
+    className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all"
+  >
+    <div className="w-12 h-12 rounded-xl bg-white-100 flex items-center justify-center">
+      <img 
+        src="/refresh.png" 
+        alt="real time sync icon" 
+        className="w-12 h-12" 
+      />
+    </div>
+    <h4 className="text-lg font-semibold text-slate-900">
+      Real-time sync
+    </h4>
+    <p className="text-sm text-slate-600">
+      Rewards update instantly across devices.
+    </p>
+  </motion.div>
+
+</div>
       </section>
     </div>
   )

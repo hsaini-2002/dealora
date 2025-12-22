@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react"
 import { GiNetworkBars } from "react-icons/gi"
 import { FaWifi } from "react-icons/fa";
 import { IoIosBatteryFull } from "react-icons/io";
+import { FcGoogle } from "react-icons/fc";
 import dealoraHomeMockup from "../out/mockups/dealora-home.png"
 
 const heroVariants = {
@@ -154,95 +155,36 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <p className="text-xs text-slate-500">
-              For business and partnership enquiries, visit the contact page.
-            </p>
-
-            <motion.div
-              className="mt-6 grid gap-4 text-xs text-slate-600 sm:grid-cols-3"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <motion.div
-                role="article"
-                whileHover={{ y: -6 }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/70 p-5 shadow-[0_14px_40px_rgba(2,6,23,0.06)] backdrop-blur transition-all duration-300 hover:border-brand-accent/30 hover:shadow-[0_22px_70px_rgba(2,6,23,0.10)]"
+            <div className="mt-6 w-64 space-y-3 mr-auto">
+              <p className="text-sm font-medium text-center text-slate-700">Sign in to access your rewards</p>
+              <button
+                onClick={() => {/* Handle Google sign in */}}
+                className="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
               >
-                <div aria-hidden className="pointer-events-none absolute -right-14 -top-14 h-52 w-52 rounded-full bg-[radial-gradient(circle_at_center,_rgba(34,211,238,0.18),_transparent_62%)] blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
-                <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,_rgba(255,255,255,0.70),_rgba(255,255,255,0.15))] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div aria-hidden className="pointer-events-none absolute -inset-y-14 left-0 w-[140%] -translate-x-[120%] rotate-[12deg] bg-[linear-gradient(90deg,_transparent,_rgba(255,255,255,0.55),_transparent)] opacity-0 transition-[transform,opacity] duration-700 ease-out group-hover:translate-x-[120%] group-hover:opacity-100" />
-
-                <div className="relative overflow-hidden rounded-xl bg-slate-50/60 ring-1 ring-slate-200/70">
-                  <div className="relative h-40 w-full sm:h-44">
-                    <Image
-                      src="/All%20rewards%20in%20one%20place.png"
-                      alt="All rewards in one place"
-                      fill
-                      sizes="(min-width: 640px) 33vw, 100vw"
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
-                <div className="relative mt-4 min-w-0">
-                  <p className="text-sm font-semibold tracking-tight text-slate-900">All rewards in one place</p>
-                  <p className="mt-2 text-[12px] leading-relaxed text-slate-600">Centralise coupons, offers, and cashback from supported apps.</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                role="article"
-                whileHover={{ y: -6 }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/70 p-5 shadow-[0_14px_40px_rgba(2,6,23,0.06)] backdrop-blur transition-all duration-300 hover:border-emerald-300/40 hover:shadow-[0_22px_70px_rgba(2,6,23,0.10)]"
+                <FcGoogle className="h-5 w-5" />
+                Continue with Google
+              </button>
+              <div className="relative flex items-center py-1">
+                <div className="flex-grow border-t border-slate-200"></div>
+                <span className="mx-3 flex-shrink text-sm text-slate-500">or</span>
+                <div className="flex-grow border-t border-slate-200"></div>
+              </div>
+              <button
+                onClick={() => {/* Handle email sign in */}}
+                className="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
               >
-                <div aria-hidden className="pointer-events-none absolute -right-14 -top-14 h-52 w-52 rounded-full bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.18),_transparent_62%)] blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
-                <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,_rgba(255,255,255,0.70),_rgba(255,255,255,0.15))] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div aria-hidden className="pointer-events-none absolute -inset-y-14 left-0 w-[140%] -translate-x-[120%] rotate-[12deg] bg-[linear-gradient(90deg,_transparent,_rgba(255,255,255,0.55),_transparent)] opacity-0 transition-[transform,opacity] duration-700 ease-out group-hover:translate-x-[120%] group-hover:opacity-100" />
-
-                <div className="relative overflow-hidden rounded-xl bg-slate-50/60 ring-1 ring-slate-200/70">
-                  <div className="relative h-40 w-full sm:h-44">
-                    <Image
-                      src="/Verified%20Coupons%20Only.png"
-                      alt="Verified coupons only"
-                      fill
-                      sizes="(min-width: 640px) 33vw, 100vw"
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="relative mt-4 min-w-0">
-                  <p className="text-sm font-semibold tracking-tight text-slate-900">Verified coupons only</p>
-                  <p className="mt-2 text-[12px] leading-relaxed text-slate-600">Focus on live, high-intent offers instead of generic promo codes.</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                role="article"
-                whileHover={{ y: -6 }}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/70 p-5 shadow-[0_14px_40px_rgba(2,6,23,0.06)] backdrop-blur transition-all duration-300 hover:border-sky-300/40 hover:shadow-[0_22px_70px_rgba(2,6,23,0.10)]"
-              >
-                <div aria-hidden className="pointer-events-none absolute -right-14 -top-14 h-52 w-52 rounded-full bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.16),_transparent_62%)] blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
-                <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,_rgba(255,255,255,0.70),_rgba(255,255,255,0.15))] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div aria-hidden className="pointer-events-none absolute -inset-y-14 left-0 w-[140%] -translate-x-[120%] rotate-[12deg] bg-[linear-gradient(90deg,_transparent,_rgba(255,255,255,0.55),_transparent)] opacity-0 transition-[transform,opacity] duration-700 ease-out group-hover:translate-x-[120%] group-hover:opacity-100" />
-
-                <div className="relative overflow-hidden rounded-xl bg-slate-50/60 ring-1 ring-slate-200/70">
-                  <div className="relative h-40 w-full sm:h-44">
-                    <Image
-                      src="/Fast%20App%20Redirection.png"
-                      alt="Fast app redirection"
-                      fill
-                      sizes="(min-width: 640px) 33vw, 100vw"
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="relative mt-4 min-w-0">
-                  <p className="text-sm font-semibold tracking-tight text-slate-900">Fast app redirection</p>
-                  <p className="mt-2 text-[12px] leading-relaxed text-slate-600">Jump straight into the right app when a deal is app-linked.</p>
-                </div>
-              </motion.div>
-            </motion.div>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Continue with Email
+              </button>
+            </div>
+            
+            <div className="mt-6 border-t border-slate-100 pt-6">
+              <p className="text-xs text-slate-500">
+                For business and partnership enquiries, visit the contact page.
+              </p>
+            </div>
           </div>
 
           <motion.div
@@ -383,55 +325,158 @@ export default function HomePage() {
   </motion.section>
 
   <HowItWorks />
-      <motion.section
-        id="features"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-        className="w-full px-4 py-16 sm:px-6 lg:px-12 sm:py-20"
-      >
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Key features
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm text-slate-600 sm:text-base">
-              Everything in Dealora is designed to reduce friction and maximise the
-              value you get from every coupon and reward.
-            </p>
-          </div>
-          <Link
-            href="/features"
-            className="text-xs font-medium text-brand-accent hover:text-brand-accent/80"
-          >
-            View all features
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-6">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className={`group rounded-3xl border border-slate-200/70 bg-white/70 p-6 text-xs text-slate-600 shadow-[0_16px_50px_rgba(2,6,23,0.06)] backdrop-blur transition-transform duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-[0_22px_70px_rgba(2,6,23,0.10)] ${
-                feature.title === "Unified Coupon Dashboard"
-                  ? "md:col-span-3"
-                  : feature.title === "Auto-Fetch Rewards"
-                    ? "md:col-span-3"
-                    : "md:col-span-2"
-              }`}
-            >
-              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-950/5 text-[11px] font-semibold text-brand-blue ring-1 ring-slate-200/70">
-                {feature.title.split(" ")[0]}
-              </div>
-              <h3 className="text-sm font-semibold text-slate-900">
-                {feature.title}
-              </h3>
-              <p className="mt-2 leading-relaxed">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </motion.section>
+     <motion.section
+  id="features"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.25 }}
+  variants={sectionVariants}
+  className="relative w-full bg-gradient-to-br from-slate-50 via-purple-50/40 to-cyan-50/50 px-4 py-20 sm:px-6 lg:px-12 sm:py-28"
+>
+  {/* ambient background blobs */}
+  <div aria-hidden className="pointer-events-none absolute inset-0">
+    <div className="absolute top-16 left-12 h-72 w-72 rounded-full bg-purple-300/30 blur-3xl" />
+    <div className="absolute top-24 right-16 h-96 w-96 rounded-full bg-cyan-300/30 blur-3xl" />
+    <div className="absolute bottom-16 left-1/3 h-80 w-80 rounded-full bg-violet-300/25 blur-3xl" />
+  </div>
 
+  {/* header */}
+  <div className="relative mb-16 max-w-3xl">
+    <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+      Key features that{" "}
+      <span className="bg-brand-gradient bg-clip-text text-transparent">
+        reduce friction
+      </span>
+    </h2>
+    <p className="mt-4 text-base text-slate-600">
+      Everything in Dealora is designed to stay out of your way and quietly help you
+      save more every day.
+    </p>
+  </div>
+
+  {/* layered cards */}
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="group relative grid gap-6 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr" style={{ perspective: '2000px' }}>
+      {[
+        {
+          title: "All rewards in one place",
+          text: "Coupons, offers, and cashback from supported apps in one clean dashboard.",
+          gradient: "from-purple-500 to-violet-600",
+          rotate: 5,
+          imageSrc: "/all rewards.jpg"
+        },
+        {
+          title: "Auto-fetched verified coupons",
+          text: "Live, high-intent offers pulled automatically. No expired or fake codes.",
+          gradient: "from-cyan-500 to-sky-600",
+          rotate: -5,
+          imageSrc: "/verified.jpg"
+        },
+        {
+          title: "Secure sign-in",
+          text: "Privacy-first authentication with modern security best practices.",
+          gradient: "from-emerald-500 to-teal-600",
+          rotate: 5,
+          imageSrc: "/secure sign in.jpg"
+        },
+        {
+          title: "Cashback tracking",
+          text: "Track earned, pending, and confirmed cashback across sources.",
+          gradient: "from-amber-500 to-orange-600",
+          rotate: -5,
+          imageSrc: "/cashback tracking.jpg"
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={item.title}
+          whileHover={{
+            scale: 1.1,
+            rotate: 0,
+            zIndex: 20,
+            transition: { 
+              type: "spring", 
+              stiffness: 300,
+              damping: 25
+            }
+          }}
+          initial={{ 
+            scale: 0.98,
+            rotate: item.rotate,
+            y: 20,
+            opacity: 0.9
+          }}
+          whileInView={{ 
+            scale: 0.98,
+            rotate: item.rotate,
+            y: 0,
+            opacity: 1,
+            transition: { 
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: [0.16, 1, 0.3, 1]
+            }
+          }}
+          viewport={{ once: true, margin: "-50px" }}
+          className="relative h-full"
+        >
+          <div
+            className={`
+              relative h-full rounded-3xl border-2 border-slate-200/60
+              bg-white/95 p-8 backdrop-blur-sm
+              shadow-[0_25px_60px_rgba(2,6,23,0.08)]
+              transition-all duration-500 
+              group-hover:[&:not(:hover)]:opacity-70
+              group-hover:[&:not(:hover)]:scale-[0.96]
+              hover:shadow-[0_30px_70px_rgba(2,6,23,0.12)]
+              hover:border-slate-300/50
+              hover:z-10
+            `}
+          >
+            {/* gradient accent */}
+            <div
+              aria-hidden
+              className={`absolute inset-0 rounded-[1.5rem] bg-gradient-to-br ${item.gradient} opacity-[0.04]`}
+            />
+
+            {/* glow ring */}
+            <div
+              aria-hidden
+              className="absolute inset-0 rounded-[1.5rem] ring-1 ring-slate-200/70"
+            />
+
+            <div className="relative">
+              <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+                {item.title}
+              </h3>
+
+              
+                <p className="mt-4 text-base leading-relaxed text-slate-600 mb-8 whitespace-pre-wrap">
+                  {item.text}
+                </p>
+              
+              <div className="relative mt-6 h-64 overflow-hidden rounded-2xl">
+  {/* The container below is now set to full height/width without restricting padding */}
+  <div className="relative z-10 flex h-full w-full items-center justify-center">
+    {/* Removed max-w-[220px] to allow the image to expand */}
+    <div className="h-full w-full">
+      <Image
+        src={item.imageSrc}
+        alt={item.title}
+        // Use fill for Next.js Images to automatically fit the parent container
+        fill 
+        className="object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.section>
       {/* <motion.section
         id="app-preview"
         initial="hidden"
